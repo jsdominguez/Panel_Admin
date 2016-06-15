@@ -1,0 +1,88 @@
+<style>
+            #botones
+             {
+                 float:left;
+                 padding-left:0px;                  
+             }
+            #boton1,boton2,boton3
+             {
+                 
+                display: inline-block;
+                margin-left: 50px;
+                margin-bottom: 15px;
+                margin-top: 10px;
+                 font-weight: bold;
+                 
+             }
+            #contar
+             {
+                 float:right;
+                 padding-right: 50px;
+                 color: red;
+                               
+             }
+            #color:hover
+            {
+            background:#C4CFDA;  
+            }
+            #boton
+            {
+                width:170px;
+            }
+            #boton2
+            {
+                width:170px;
+            }
+            #act,#act2
+             {
+                 width: 170px;
+             }    
+            #contener
+            {
+                width:95%;
+                font-family: "comic sans ms";
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .modal 
+            {
+                position: fixed;
+                right: o;
+                top: 40px;
+            }
+            .modal-header
+            {
+                background: #2fd09e;
+                color: black;
+            }
+            .popover 
+            {
+                background-color: #e74c3c;
+                color: #f1ecec;
+                width: 120px;
+            }
+            .popover.right .arrow:after 
+            {
+                border-right-color: #e74c3c;
+            }
+            .input-group[class*="col-"]
+            {
+                padding-right: 15px;
+                padding-left: 15px;
+            }	
+
+            th
+            {
+                text-align: center; 
+                color: black;
+            }
+            #menu
+            {
+                -webkit-transition: width 3s;
+            }
+            tbody
+             {
+               border: black 3px solid;
+            }
+        </style>

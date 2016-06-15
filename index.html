@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>| Sistema Registro | </title>
+
+        <!-- LLAMANDO A TODOS LOS ESTILOS-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link  rel="stylesheet" href="plugin/BT/estilo_tabla.css">
+        <link  rel="stylesheet" href="plugin/dist/sweetalert2.css">
+        <!-- CIERRE DEL LLAMADO A LOS ESTILOS -->
+        <style>
+            #botones
+            {
+                float:left;
+                padding-left:0px;
+
+
+            }
+            #boton1,boton2,boton3
+            {
+
+                display: inline-block;
+                margin-left: 50px;
+                margin-bottom: 15px;
+                margin-top: 10px;
+                font-weight: bold;
+
+            }
+            #contar
+            {
+                float:right;
+                padding-right: 50px;
+                color: red;
+
+            }
+            #color:hover
+            {
+                background:#C4CFDA;  
+            }
+            #boton
+            {
+                width:170px;
+            }
+            #boton2
+            {
+                width:170px;
+            }
+            #act,#act2
+            {
+                width: 170px;
+            }    
+            #contener
+            {
+                width:95%;
+                font-family: "comic sans ms";
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .modal 
+            {
+                position: fixed;
+                right: o;
+                top: 40px;
+            }
+            .modal-header
+            {
+                background: #2fd09e;
+                color: black;
+            }
+            .popover 
+            {
+                background-color: #e74c3c;
+                color: #f1ecec;
+                width: 120px;
+            }
+            .popover.right .arrow:after 
+            {
+                border-right-color: #e74c3c;
+            }
+            .input-group[class*="col-"]
+            {
+                padding-right: 15px;
+                padding-left: 15px;
+            }	
+
+            th
+            {
+                text-align: center; 
+                color: black;
+            }
+            #menu
+            {
+                -webkit-transition: width 3s;
+            }
+            tbody
+            {
+                border: black 3px solid;
+            }
+        </style>
+    </head>
+    <body class="nav-md" onload="viewdata()">  <!-- LLAMAMOS A LA FUNCION VIEWDATA PARA QUE NOS CARGUE DATOS EN LA TABLA -->
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col" id="menu">  <!-- LA COLUMNA DE OPCIONES TENDRA SOLO 3 COLUMNAS EN BOOTSTRAP -->
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <center><a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>RootPein</span></a></center>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="profile">
+                            <div class="profile_pic">
+                                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                            </div>
+                            <div class="profile_info">
+                                <span>Welcome</span>
+                                <h2>Jhosep Dominguez</h2>
+                            </div>
+                        </div>
+                        <br />
+
+                        <!-- MENU -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>General</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-table"></i>Gestion de Registros <span class="fa fa-chevron-down"></span></a><!-- CREAMOS UNA OPCION QUE TENDRA SUB -OPCIONES--> 
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="#"> Proveedores</a></li>                                             <!--SUB-OPCIONES -->                                      
+                                            <li><a href="reporte.php">Reporte Estadistico</a>                                 <!--SUB-OPCIONES -->  
+                                            </li>
+                                        </ul>
+                                    </li>  <!-- CERRAMOS LA OPCION CONTENEDORA -->  
+
+                                    <li><a><i class="fa fa-table"></i>Gestion de Registros <span class="fa fa-chevron-down"></span></a>  <!-- CREAMOS UNA OPCION QUE TENDRA SUB -OPCIONES-->
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="reporte.html"> Proveedores</a></li>                                                                            <!--SUB-OPCIONES --> 
+                                            <li><a href="reporte.html"> Registro de Proveedores</a></li>                                                               <!--SUB-OPCIONES -->  
+                                        </ul>
+                                    </li>
+
+                                    <li><a><i class="fa fa-table"></i>Gestion de Registros <span class="fa fa-chevron-down"></span></a> <!-- MODIFICANDO-->
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="tables.html"> Proveedores</a></li>
+                                            <li><a href="tables_dynamic.html"> Registro de Proveedores</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a><i class="fa fa-table"></i>Gestion de Registros <span class="fa fa-chevron-down"></span></a> <!-- MODIFICANDO-->
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="tables.html"> Proveedores</a></li>
+                                            <li><a href="tables_dynamic.html"> Registro de Proveedores</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="menu_section">
+                                <h3>Reportes</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-windows"></i> Gestion de Reportes <span class="fa fa-chevron-down"></span></a>    <!-- CREAMOS UNA OPCION QUE TENDRA SUB -OPCIONES-->
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="page_404.html">404 Error</a></li>                                <!--SUB-OPCIONES -->  
+                                            <li><a href="page_500.html">500 Error</a></li>                                <!--SUB-OPCIONES -->  
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!--CERRAMOS LA SECCCION -->  
+
+                            <div class="menu_section">
+                                <h3>Listas</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="page_404.html">404 Error</a></li>
+                                            <li><a href="page_500.html">500 Error</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="menu_section">
+                                <h3>Gestion de Pedido</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-windows"></i> Lista de pedido <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="page_404.html">404 Error</a></li>                                     <!--SUB-OPCIONES -->
+                                            <li><a href="page_500.html">500 Error</a></li>                                     <!--SUB-OPCIONES --> 
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>  <!-- CERRANDO LA SECCION --> 
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOGIN DERECHO SUPERIOR -->
+                <div class="top_nav"> 
+                    <center><h1><font color="#ffffff">Sistema Administrativo de Registros</font></h1></center>
+                    <div class="nav_menu">
+                        <nav class="" role="navigation">
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+
+                            <div id="botones">
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton1" style=" font-weight: bold;">Nuevo Usuario</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL --> 
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton2" style=" font-weight: bold;">Reporte PDF</a> <!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL --> 
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton3" style=" font-weight: bold;">Reporte Excel</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton3" style=" font-weight: bold;">Reporte Excel</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton3" style=" font-weight: bold;">Reporte Excel</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton3" style=" font-weight: bold;">Reporte Excel</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+                                <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" id="boton3" style=" font-weight: bold;">Reporte Excel</a><!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+                            </div>  <!--CREAMOS UN BOTON DONDE LLAMARA A UN MODAL -->
+
+                            <div id="contar">
+                                <img src="images/user.png" id="usuario" hidden=""><label id="con"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <img src="images/update.png" id="useract" hidden="" alt="pene" onclick="act();">&nbsp;&nbsp;<label id="con2"></label>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+
+                <!--CONTENIDO CUERPO --> 
+                <div class="right_col" role="main">
+                    <div class="row">        
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">       <!-- CREAMOS UN MODAL DANDOLE UN ID IDENTIFICADOR--> 
+                            <div class="modal-dialog">
+                                <div class="modal-content" id="contenido">               <!-- APARTIR DE AQUI IRA TODO EL CONTENIDO PARA EL MODAL , CREAMOS UNA CABEZERA--> 
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">  <!-- CREAMOS UN BOTONCITO PARA CERRAR EL MODAL A LA DERECHA--> 
+                                            <span aria-hidden="true">&times;</span>
+                                        </button><!-- CERRAMOS EL BONTONCITO --> 
+                                        <center><h4 class="modal-title">Nuevo Registro</h4></center>
+                                    </div>
+
+                                    <div class="modal-body">                  <!-- CREAMOS EL CUERPO QUE TENDRA EL CONTENIDO --> 
+                                        <form id="loginForm" method="post" class="form-horizontal"> <!-- CREAMOS UN FORMULARIO PASANDOLE UN ID IDENTIFICADOR --> 
+                                            <div class="form-group">                   <!-- CREAMOS UN GRUPO DONDE IRA UN LABEL Y UN INPUT --> 
+                                                <label class="col-xs-3 control-label">Nombre</label>
+                                                <div class="col-xs-8">
+                                                    <input type="text" class="form-control" name="nombre" id="nombre"  placeholder="Ingrese su Nombre"/>
+                                                </div>
+                                            </div> <!-- CERRAMOS EL GRUPO -->
+
+                                            <div class="form-group"> <!-- CREAMOS UN GRUPO DONDE IRA UN LABEL Y UN INPUT --> 
+                                                <label class="col-xs-3 control-label">Apellido</label>
+                                                <div class="col-xs-8">
+                                                    <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su Apellido"/>
+                                                </div>
+                                            </div><!-- CERRAMOS EL GRUPO -->
+
+                                            <div class="form-group">              <!-- CREAMOS UN GRUPO DONDE IRA UN LABEL Y UN INPUT --> 
+                                                <label class="col-xs-3 control-label" >Edad</label>
+                                                <div class="col-xs-8">
+                                                    <input type="number" class="form-control" name="edad" id="edad" placeholder="Mayor de 17 Años"/>
+                                                </div>
+                                            </div><!-- CERRAMOS EL GRUPO -->
+
+                                            <div class="form-group">             
+                                                <label class="col-xs-3 control-label" >Estado</label>             
+                                                <div class="col-xs-8 selectContainer">
+                                                    <select class="form-control" name="size" id="selec">
+                                                        <option value="">Selecciona</option>
+                                                        <option  value="Active">Active</option>
+                                                        <option value="Offline">Offline</option>
+                                                    </select>
+                                                </div>
+                                            </div> 
+
+
+                                            <div class="form-group">                                                                                <!-- CREAMOS UN GRUPO DONDE IRA UN LABEL Y UN INPUT --> 
+                                                <label class="col-xs-3 control-label">Correo</label>
+                                                <div class="col-xs-8">
+                                                    <input type="email" class="form-control" name="coreo" id="correo"  placeholder="Ingrese su correo"/>
+                                                </div>
+                                            </div><!-- CERRAMOS EL GRUPO -->
+
+                                            <div class="form-group">                                                                                <!-- CREAMOS UN GRUPO DONDE IRA UN LABEL Y UN INPUT --> 
+                                                <label class="col-xs-3 control-label" >Telefono</label>
+                                                <div class="col-xs-8">
+                                                    <input type="tel" class="form-control" name="telefono" id="telefono"  placeholder="Maximo 9 Digitos"/>
+                                                </div>
+                                            </div><!-- CERRAMOS EL GRUPO -->
+
+                                            <div class="form-group">                                                                                     <!-- CREAMOS UN GRUPO DONDE IRAN LOS BOTONES --> 
+                                                <div class="col-xs-8 col-xs-offset-3">                                                                <!-- LE DAMOS UNA COLUMNA DE 8 Y QUE ESTARA CENTRADO --> 
+                                                    <center><button type="button" class="btn btn-primary" id="boton">Registrar</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="boton2">Cancel</button></center>
+                                                </div>
+                                            </div><!-- CERRAMOS EL GRUPO -->
+
+                                        </form><!-- CERRAMOS EL FORMULARIO -->
+                                    </div><!-- CERRAMOS EL CUERPO DEL MODAL -->
+                                </div><!-- CERRAMOS EL CONTENIDO -->
+                            </div>
+                        </div><!-- CERRAMAMOS EL MODAL -->
+
+                        <br>
+
+                        <center>
+                            <div id="contener">                <!-- AQUI SE CARGARAN TODOS LOS DATOS CUANDO LA PAGINA INICIA -->
+
+                            </div>
+                        </center>
+
+                        <br>  
+
+                        <div>                                 
+                            <center> Sistema de Registros by |
+                                <span class="lead"> <i class="fa fa-paw"></i>RootPein</span>
+                            </center>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LLAMAMOS A TODOS LOS SCRIPT  -->
+        <script src="plugin/jquery.js"></script>
+        <script src="plugin/notify.js"></script> 
+        <script src="plugin/notify.min.js"></script>
+        <script src="plugin/query_table.js"></script>
+        <script  src="plugin/jquery.dataTables.js"></script>
+        <script  src="plugin/query_table.js"></script>
+        <script  src="plugin/paginar.js"></script>
+        <script src="plugin/formato_tabla.js"></script>
+        <script src="plugin/bootstrap.min.js"></script>
+        <script src="plugin/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="plugin/custom.js"></script>
+        <script src="plugin/dist/sweetalert2.min.js"></script>
+        <script src="ajax/matenimiento.js"></script>
+
+        <!-- LLAMAMOS A TODOS LOS SCRIPT  -->
+    </body>
+</html>
